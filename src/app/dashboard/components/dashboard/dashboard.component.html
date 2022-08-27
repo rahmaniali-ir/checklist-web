@@ -24,6 +24,9 @@
     >
       <i-con name="board"></i-con>
       <span>{{ board.title || "Unnamed Board" }}</span>
+      <span *ngIf="board.lists.length" class="badge">{{
+        board.lists.length
+      }}</span>
     </a>
 
     <button (click)="newBoard()" class="button">
