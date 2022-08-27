@@ -7,6 +7,7 @@ import { BoardComponent } from './components/board/board.component';
 import { ListComponent } from './components/list/list.component';
 import { ItemComponent } from './components/item/item.component';
 import { FormsModule } from '@angular/forms';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     BoardComponent,
     ListComponent,
     ItemComponent,
+    SidebarComponent,
   ],
   imports: [CommonModule, RouterModule, CoreModule, FormsModule],
   exports: [DashboardComponent],
