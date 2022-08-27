@@ -8,7 +8,7 @@ $outletPadding: 16px
   box-shadow: var(--shadow)
   display: flex
   flex-direction: column
-  margin-inline-end: var(--dasbhoard-padding)
+  margin-inline-end: var(--dashboard-padding)
   max-width: 250px
   padding: 16px
   position: relative
@@ -17,10 +17,16 @@ $outletPadding: 16px
 
   > header
     .logo
+      align-items: center
+      border-bottom: 1px solid var(--gray-800)
       color: #b1b3d1
+      display: flex
       font-size: 24px
       font-weight: bold
+      height: calc(var(--dashboard-cover) - var(--dashboard-padding) - 16px)
+      justify-content: center
       margin-bottom: 1em
+      padding-bottom: 16px
       text-align: center
       transition: all .3s ease
       
