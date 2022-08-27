@@ -33,3 +33,17 @@
     display: grid
     gap: 16px
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+
+    .add
+      border: 1px dashed #cdcdcd
+      flex-direction: column
+      justify-content: center
+      transition: all .3s ease
+
+      &:hover
+        border-color: transparent
+        box-shadow: var(--shadow)
+
+      i-con
+        font-size: 1.5em
+        margin: 0 0 16px

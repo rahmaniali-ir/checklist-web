@@ -30,7 +30,8 @@
 <main>
   <cl-list *ngFor="let list of lists" [list]="list"></cl-list>
 
-  <button (click)="newList()" class="button">
+  <button (click)="newList()" class="button primary-icon add">
+    <i-con name="plus"></i-con>
     <span>New List</span>
   </button>
 </main>
