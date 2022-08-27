@@ -3,7 +3,7 @@
   all: unset
 
   align-items: center
-  background: #fafafa
+  background: var(--gray-800)
   border-radius: var(--radius)
   color: inherit
   cursor: pointer
@@ -28,11 +28,11 @@
 .button
   &.primary-icon, &.danger-icon
     background: none
-    color: #676767
+    color: var(--gray-500)
 
     &:hover
-      background: #fafafa
-      color: #000
+      background: var(--gray-800)
+      color: var(--gray-100)
 
       > i-con
         color: var(--icon-color)
