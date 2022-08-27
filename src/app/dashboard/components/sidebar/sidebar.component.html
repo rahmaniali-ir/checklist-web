@@ -4,17 +4,24 @@
     ><span>ist</span>
   </div>
 
-  <div class="profile">
+  <!-- <div class="profile">
     <figure>
       <img
         src="https://avatars.githubusercontent.com/u/37767911?v=4"
         alt="Ali Rahmani"
       />
     </figure>
-  </div>
+  </div> -->
 </header>
 
-<main>
+<section>
+  <a [routerLink]="'/'" class="button">
+    <i-con name="present"></i-con>
+    <span>Overview</span>
+  </a>
+</section>
+
+<section>
   <header>
     Boards
     <span *ngIf="boards.length" class="badge">{{ boards.length }}</span>
@@ -39,7 +46,7 @@
     <i-con name="plus"></i-con>
     <span>New Board</span>
   </button>
-</main>
+</section>
 
 <footer>
   <button class="button danger-icon">
