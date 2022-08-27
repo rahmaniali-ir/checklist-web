@@ -16,6 +16,10 @@ export class SidebarComponent implements OnInit {
     return this.boardService.boards.array;
   }
 
+  trackByUid(index: number) {
+    return this.boards ? this.boards[index].uid : '';
+  }
+
   newBoard() {
     this.boardService.newBoard().subscribe((board) => {
       this.router.navigate([`/board/${board.uid}`]);
