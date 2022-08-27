@@ -9,9 +9,11 @@
 
 <main>
   <cl-item *ngFor="let item of items" [item]="item"></cl-item>
+</main>
 
+<footer>
   <button (click)="newItem()" class="button primary-icon">
     <i-con name="plus"></i-con>
     <span>New item</span>
   </button>
-</main>
+</footer>

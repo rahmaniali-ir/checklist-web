@@ -12,11 +12,19 @@
       font-weight: bold
 
   > main
-    margin-top: 16px
+    margin: 16px 0
 
-cl-item
-  + cl-item
-    margin-top: 16px
-  
-.button
-  background: none
+  cl-item
+    + cl-item
+      margin-top: 16px
+    
+  footer
+    opacity: 0
+    transition: all .3s ease
+
+    .button
+      background: none
+
+  &:hover
+    footer
+      opacity: 1
