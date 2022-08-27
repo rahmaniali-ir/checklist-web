@@ -1,0 +1,91 @@
+
+$profileSize: 64px
+$outletPadding: 16px
+
+:host
+  display: flex
+  min-height: 100vh
+  padding: var(--dasbhoard-padding)
+
+  > figure
+    background: #eee
+    height: var(--dashboard-cover)
+    left: 0
+    object-fit: cover
+    pointer-events: none
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 0
+
+    img
+      display: block
+      height: 100%
+      object-fit: cover
+      width: 100%
+
+  > aside
+    background: #fff
+    border-radius: var(--radius)
+    display: flex
+    flex-direction: column
+    margin-inline-end: var(--dasbhoard-padding)
+    min-width: 20vw
+    padding: 16px
+    position: relative
+    z-index: 2
+
+    > header
+      .logo
+        color: #b1b3d1
+        font-size: 24px
+        font-weight: bold
+        margin-bottom: 1em
+        text-align: center
+
+        span
+          color: #474d98
+
+      figure
+        border-radius: 50%
+        height: $profileSize
+        width: $profileSize
+
+        img
+          border-radius: inherit
+          display: block
+          height: 100%
+          object-fit: cover
+          width: 100%
+
+    > main, > footer
+      display: flex
+      flex-direction: column
+
+    > main
+      margin: 24px 0
+
+    > footer
+      margin-top: auto
+
+    .button
+      display: flex
+
+      + .button
+        margin-top: 8px
+
+      i-con
+        font-size: 1.2em
+
+  > main
+    display: flex
+    flex: 1
+    padding-inline-start: 0
+    position: relative
+    z-index: 1
+
+    .outlet
+      border-radius: var(--radius)
+      display: flex
+      flex: 1
+      overflow: auto

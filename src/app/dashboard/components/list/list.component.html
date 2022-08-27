@@ -1,0 +1,16 @@
+<header>
+  <input
+    [value]="title"
+    placeholder="Unnamed List"
+    class="plain-text-input"
+    type="text"
+  />
+</header>
+
+<main>
+  <cl-item *ngFor="let item of items" [item]="item"></cl-item>
+
+  <button (click)="newItem()" class="button">
+    <span>New item</span>
+  </button>
+</main>

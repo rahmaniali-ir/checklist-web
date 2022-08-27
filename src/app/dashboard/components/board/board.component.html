@@ -1,0 +1,18 @@
+<header>
+  <main>
+    <input
+      [value]="title"
+      placeholder="Unnamed Board"
+      class="plain-text-input"
+      type="text"
+    />
+  </main>
+</header>
+
+<main>
+  <cl-list *ngFor="let list of lists" [list]="list"></cl-list>
+
+  <button (click)="newList()" class="button">
+    <span>New List</span>
+  </button>
+</main>

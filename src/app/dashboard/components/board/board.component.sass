@@ -1,0 +1,18 @@
+
+:host
+  display: flex
+  flex: 1
+  flex-direction: column
+  padding: calc(var(--dashboard-cover) - var(--dasbhoard-padding)) 16px 16px
+
+  > header
+    padding: 32px 0
+
+    input
+      font-size: 2em
+      font-weight: bold
+
+  > main
+    display: grid
+    gap: 16px
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))

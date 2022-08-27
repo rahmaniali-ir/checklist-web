@@ -1,0 +1,20 @@
+
+.button
+  all: unset
+
+  align-items: center
+  background: #eee
+  border-radius: var(--radius)
+  color: inherit
+  cursor: pointer
+  display: inline-flex
+  line-height: 1em
+  padding: 8px 16px
+  text-decoration: none
+
+  &:disabled
+    cursor: default
+
+  > i-con
+    &:first-child
+      margin: 0 .5em 0 -.5em

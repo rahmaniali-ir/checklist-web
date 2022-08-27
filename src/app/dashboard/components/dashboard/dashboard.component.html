@@ -1,0 +1,47 @@
+<figure>
+  <img *ngIf="background" [src]="background" alt="Background" />
+</figure>
+
+<aside>
+  <header>
+    <div class="logo"><span>C</span>eck<span>L</span>ist</div>
+
+    <div class="profile">
+      <figure>
+        <img
+          src="https://avatars.githubusercontent.com/u/37767911?v=4"
+          alt="Ali Rahmani"
+        />
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <a
+      *ngFor="let board of boards"
+      [routerLink]="'/board/' + board.uid"
+      class="button"
+    >
+      <i-con name="board"></i-con>
+      <span>{{ board.title || "Unnamed Board" }}</span>
+    </a>
+
+    <button (click)="newBoard()" class="button">
+      <i-con name="plus"></i-con>
+      <span>New Board</span>
+    </button>
+  </main>
+
+  <footer>
+    <button class="button">
+      <i-con name="logOut"></i-con>
+      <span>Logout</span>
+    </button>
+  </footer>
+</aside>
+
+<main>
+  <div class="outlet">
+    <router-outlet></router-outlet>
+  </div>
+</main>
