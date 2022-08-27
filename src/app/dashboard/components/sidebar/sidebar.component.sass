@@ -64,16 +64,24 @@ $outletPadding: 16px
   > footer
     margin-top: auto
 
-  .button
-    display: flex
+.button
+  display: flex
 
-    + .button
-      margin-top: 8px
+  + .button
+    margin-top: 8px
 
-    span
-      overflow: hidden
-      text-overflow: ellipsis
-      white-space: nowrap
+  span
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
 
-      &:not(.badge)
-        margin-inline-end: 8px
+    &:not(.badge)
+      margin-inline-end: 8px
+
+.add
+  background: none
+  color: #676767
+
+  &:hover
+    background: #fafafa
+    color: #000
