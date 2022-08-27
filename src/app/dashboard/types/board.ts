@@ -29,9 +29,15 @@ export class CheckBoard {
   icon?: string;
   image?: string;
 
-  constructor(uid: string, title: string = '', color: string = '') {
+  constructor(
+    uid: string,
+    title: string = '',
+    color: string = '',
+    image: string = ''
+  ) {
     this.uid = uid;
     this.title = title;
     this.color = color;
+    this.image = image;
   }
 }

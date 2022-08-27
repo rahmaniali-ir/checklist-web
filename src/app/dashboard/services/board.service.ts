@@ -71,10 +71,53 @@ export class BoardService {
   currentBoard$ = new BehaviorSubject<CheckBoard | undefined>(undefined);
 
   constructor() {
-    const board1 = new CheckBoard('1', 'Board 1', '#00b1f1');
+    const board1 = new CheckBoard(
+      '1',
+      'Sky',
+      '#00b1f1',
+      'https://images.unsplash.com/photo-1488965015547-e349b9b11707?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+    );
     board1.lists.add(new CheckList('11', 'List 1', board1));
 
-    this.boards.add(board1, new CheckBoard('2', 'Board 2', '#dd4d3e'));
+    this.boards.add(
+      board1,
+      new CheckBoard(
+        '2',
+        'Spring',
+        '#dd4d3e',
+        'https://images.unsplash.com/photo-1433259651738-0e74537aa8b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80'
+      )
+    );
+
+    this.boards.add(
+      board1,
+      new CheckBoard(
+        '3',
+        'Leaves',
+        '#699c2e',
+        'https://images.unsplash.com/photo-1613408181923-f058a1b0e00c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80'
+      )
+    );
+
+    this.boards.add(
+      board1,
+      new CheckBoard(
+        '4',
+        'Emojis',
+        '#f59734',
+        'https://images.unsplash.com/photo-1485550409059-9afb054cada4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1965&q=80'
+      )
+    );
+
+    this.boards.add(
+      board1,
+      new CheckBoard(
+        '5',
+        'Night',
+        '#075882',
+        'https://images.unsplash.com/photo-1488866022504-f2584929ca5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80'
+      )
+    );
   }
 
   get currentBoard() {
