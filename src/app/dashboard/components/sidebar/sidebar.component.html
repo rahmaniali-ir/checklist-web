@@ -1,5 +1,8 @@
 <header>
-  <div class="logo"><span>C</span>eck<span>L</span>ist</div>
+  <div [style.color]="currentBoard?.color" class="logo">
+    <span class="capital">C</span><span>eck</span><span class="capital">L</span
+    ><span>ist</span>
+  </div>
 
   <div class="profile">
     <figure>
@@ -20,6 +23,9 @@
   <a
     *ngFor="let board of boards; trackBy: trackByUid"
     [routerLink]="'/board/' + board.uid"
+    [style.--color]="board.color"
+    [class.current]="board === currentBoard"
+    [class.no-name]="!board.title"
     class="button"
   >
     <i-con name="board"></i-con>

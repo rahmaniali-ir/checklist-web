@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
+import { randomHexColor } from 'src/app/utils/random';
 import { ArrayMap } from '../types/array-map';
 import { CheckBoard, CheckList } from '../types/board';
 
@@ -70,10 +71,14 @@ export class BoardService {
   currentBoard$ = new BehaviorSubject<CheckBoard | undefined>(undefined);
 
   constructor() {
-    const board1 = new CheckBoard('1', 'Board 1');
+    const board1 = new CheckBoard('1', 'Board 1', '#00b1f1');
     board1.lists.add(new CheckList('11', 'List 1', board1));
 
-    this.boards.add(board1, new CheckBoard('2', 'Board 2'));
+    this.boards.add(board1, new CheckBoard('2', 'Board 2', '#dd4d3e'));
+  }
+
+  get currentBoard() {
+    return this.currentBoard$.value;
   }
 
   getBoard(uid: string) {
@@ -83,7 +88,9 @@ export class BoardService {
   newBoard() {
     return new Observable<CheckBoard>((subscriber) => {
       const count = this.boards.length + 1;
-      const newBoard = new CheckBoard(String(count));
+      const color = randomHexColor();
+
+      const newBoard = new CheckBoard(String(count), '', color);
       this.boards.add(newBoard);
 
       subscriber.next(newBoard);

@@ -16,6 +16,10 @@ export class SidebarComponent implements OnInit {
     return this.boardService.boards.array;
   }
 
+  get currentBoard() {
+    return this.boardService.currentBoard;
+  }
+
   trackByUid(index: number) {
     return this.boards ? this.boards[index].uid : '';
   }
