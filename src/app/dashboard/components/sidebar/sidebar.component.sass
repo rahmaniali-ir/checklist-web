@@ -8,7 +8,7 @@ $outletPadding: 16px
   display: flex
   flex-direction: column
   margin-inline-end: var(--dasbhoard-padding)
-  min-width: 20vw
+  width: 20vw
   padding: 16px
   position: relative
   z-index: 2
@@ -66,3 +66,11 @@ $outletPadding: 16px
 
     i-con
       font-size: 1.2em
+
+    span
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+
+      &:not(.badge)
+        margin-inline-end: 8px
