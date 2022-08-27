@@ -17,6 +17,11 @@
   </header>
 
   <main>
+    <header>
+      Boards
+      <span *ngIf="boards.length" class="badge">{{ boards.length }}</span>
+    </header>
+
     <a
       *ngFor="let board of boards"
       [routerLink]="'/board/' + board.uid"
