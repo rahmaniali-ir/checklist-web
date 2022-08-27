@@ -3,14 +3,31 @@
   display: flex
   flex: 1
   flex-direction: column
-  padding: calc(var(--dashboard-cover) - var(--dasbhoard-padding)) 16px 16px
 
   > header
-    padding: 32px 0
+    .options
+      align-items: flex-end
+      display: flex
+      height: calc(var(--dashboard-cover) - var(--dasbhoard-padding))
+      padding: 16px 0
+      opacity: 0
+      transition: all .3s ease
 
-    input
-      font-size: 2em
-      font-weight: bold
+      .button
+        background: #fff
+
+        + .button
+          margin-inline-start: 8px
+
+    &:hover .options
+      opacity: 1
+
+    > main
+      margin: var(--dasbhoard-padding) 0
+
+      input
+        font-size: 2em
+        font-weight: bold
 
   > main
     display: grid
