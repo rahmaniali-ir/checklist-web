@@ -15,17 +15,17 @@
   > main
     margin: 16px 0
 
-  cl-item
-    + cl-item
-      margin-top: 16px
+    cl-item
+      + cl-item
+        margin-top: 16px
     
   footer
+    margin-top: auto
     opacity: 0
     transition: all .3s ease
 
     .button
       background: none
 
-  &:hover
-    footer
-      opacity: 1
+  &:hover footer, > main:empty + footer
+    opacity: 1
