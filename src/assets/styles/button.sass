@@ -3,7 +3,7 @@
   all: unset
 
   align-items: center
-  background: #eee
+  background: #fafafa
   border-radius: var(--radius)
   color: inherit
   cursor: pointer
@@ -24,3 +24,14 @@
 
   &:active > i-con
     transform: scale(1)
+
+.button.primary-icon
+  background: none
+  color: #676767
+
+  &:hover
+    background: #fafafa
+    color: #000
+
+    i-con
+      color: var(--primary)
