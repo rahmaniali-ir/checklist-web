@@ -1,7 +1,8 @@
 <header>
   <main>
     <input
-      [value]="title"
+      *ngIf="board"
+      [(ngModel)]="board.title"
       placeholder="Unnamed Board"
       class="plain-text-input"
       type="text"

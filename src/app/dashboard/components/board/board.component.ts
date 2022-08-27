@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  NavigationStart,
+  Router,
+} from '@angular/router';
 import { BoardService } from '../../services/board.service';
 import { CheckBoard, CheckList } from '../../types/board';
 
@@ -9,7 +14,7 @@ import { CheckBoard, CheckList } from '../../types/board';
   styleUrls: ['./board.component.sass'],
 })
 export class BoardComponent implements OnInit {
-  board?: CheckBoard;
+  board!: CheckBoard;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,20 +24,14 @@ export class BoardComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadBoard();
-
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.loadBoard();
-      }
-    });
   }
 
   get image() {
-    return this.board?.image || '';
+    return this.board.image || '';
   }
 
   get title() {
-    return this.board?.title || '';
+    return this.board.title || '';
   }
 
   get lists() {
@@ -40,18 +39,20 @@ export class BoardComponent implements OnInit {
   }
 
   private loadBoard() {
-    const { uid } = this.route.snapshot.params as { uid: string };
+    this.route.params.subscribe((params) => {
+      const uid: string = params['uid'];
 
-    if (uid) {
+      if (!uid || !this.boardService.boards.exists(uid)) {
+        this.router.navigate(['/']);
+        return;
+      }
+
       this.board = this.boardService.getBoard(uid);
       this.boardService.currentBoard$.next(this.board);
-    }
+    });
   }
 
   newList() {
-    // console.log(this.board?.lists.remove('11'));
-    // console.log(this.board?.lists.exists('12'));
-
     this.board?.lists.add(new CheckList('12', '', this.board));
   }
 }
