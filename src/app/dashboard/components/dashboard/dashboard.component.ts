@@ -8,6 +8,7 @@ import { BoardService } from '../../services/board.service';
 })
 export class DashboardComponent implements OnInit {
   background = '';
+  backgroundColor = '';
 
   constructor(private boardService: BoardService) {}
 
@@ -15,6 +16,7 @@ export class DashboardComponent implements OnInit {
     this.boardService.currentBoard$.subscribe((board) => {
       setTimeout(() => {
         this.background = board?.image || '';
+        this.backgroundColor = board?.color || '';
       });
     });
   }
