@@ -86,24 +86,29 @@ $outletPadding: 16px
 
     > .button
       animation: translate-y-in .3s ease forwards, opacity-in .3s ease forwards
+      background: transparent
+      color: var(--gray-500)
       opacity: 0
       transform: translateY(4px)
 
       &:hover
         --icon-color: var(--color)
+        color: var(--gray-100)
 
         i-con
           color: var(--icon-color, --color)
 
+      &:active
+        i-con
+          transform: scale(1.1)
+
       &.current
-        background: #fff
+        background: var(--gray-800)
         color: var(--color)
         font-weight: bold
-        transform: translateX(-10px) !important
-        width: calc(100% - 32px + 5px)
 
         i-con
-          transform: scale(1.3)
+          transform: scale(1.4)
 
         .badge
           background: var(--color)
