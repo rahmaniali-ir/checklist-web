@@ -120,6 +120,16 @@ export class BoardService {
         'moon'
       )
     );
+
+    this.boards.add(
+      new CheckBoard(
+        '6',
+        'Sunset',
+        '#c340a9',
+        'https://images.unsplash.com/photo-1575195372639-373ecc8590f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+        'sunset'
+      )
+    );
   }
 
   get currentBoard() {

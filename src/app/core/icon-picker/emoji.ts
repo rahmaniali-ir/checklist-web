@@ -23,6 +23,11 @@ export const emojiPack: Emoji[] = [
     tags: ['sun', 'day'],
   },
   {
+    title: 'Sunset',
+    icon: 'sunset',
+    tags: ['sunset'],
+  },
+  {
     title: 'Moon',
     icon: 'moon',
     tags: ['moon', 'night'],
