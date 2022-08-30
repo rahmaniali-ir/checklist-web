@@ -1,0 +1,47 @@
+
+.button
+  all: unset
+
+  align-items: center
+  background: var(--gray-800)
+  border-radius: var(--radius)
+  color: inherit
+  cursor: pointer
+  display: inline-flex
+  line-height: 1em
+  padding: 8px 16px
+  text-decoration: none
+
+  &:disabled
+    cursor: default
+
+  > i-con
+    &:first-child
+      margin: 0 .5em 0 -.5em
+
+    &:only-child
+      margin: 0 -.5em
+
+  &:hover > i-con
+    transform: scale(1.2)
+
+  &:active > i-con
+    transform: scale(1)
+
+.button
+  &.primary-icon, &.danger-icon
+    background: none
+    color: var(--gray-500)
+
+    &:hover
+      background: var(--gray-800)
+      color: var(--gray-100)
+
+      > i-con
+        color: var(--icon-color)
+
+  &.primary-icon:hover > i-con
+    --icon-color: var(--primary)
+
+  &.danger-icon:hover > i-con
+    --icon-color: var(--danger)
