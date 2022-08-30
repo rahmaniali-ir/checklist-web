@@ -1,5 +1,5 @@
 <header>
-  <div class="options">
+  <div *ngIf="board" class="options">
     <icon-picker
       [(selected)]="board.icon"
       [title]="'Change Icon'"
