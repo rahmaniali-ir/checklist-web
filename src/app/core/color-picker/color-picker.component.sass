@@ -17,26 +17,16 @@
     transform: translateY(-4px)
     width: clamp(200px, 20vw, 300px)
 
-    header
-      margin-bottom: 8px
-
-      input
-        background: var(--gray-800)
-        border-radius: var(--radius)
-        display: block
-        padding: 8px 16px
-        width: 100%
-
-    .icons
+    .colors
       display: grid
       gap: 8px
       grid-auto-rows: 32px
       grid-template-columns: repeat(auto-fill, minmax(32px, 1fr))
 
-      .icon
+      .color
         align-items: center
         background: currentColor
-        border-radius: var(--radius)
+        clip-path: url(#smooth-rounded-square)
         color: var(--gray-500)
         cursor: pointer
         display: flex
@@ -44,7 +34,4 @@
         padding: 8px
 
         &:hover
-          color: var(--gray-100)
-
-          i-con
-            transform: scale(1.2)
+          transform: scale(.9)

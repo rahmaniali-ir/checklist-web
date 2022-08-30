@@ -5,10 +5,7 @@
       [title]="'Change Icon'"
     ></icon-picker>
 
-    <button class="button">
-      <i-con name="paint"></i-con>
-      <span>Change Color</span>
-    </button>
+    <color-picker [(selected)]="board.color"></color-picker>
 
     <button class="button">
       <i-con name="image"></i-con>

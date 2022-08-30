@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BoardService } from '../../services/board.service';
+import { CheckBoard } from '../../types/board';
 
 @Component({
   selector: 'cl-dashboard',
@@ -7,17 +8,23 @@ import { BoardService } from '../../services/board.service';
   styleUrls: ['./dashboard.component.sass'],
 })
 export class DashboardComponent implements OnInit {
-  background = '';
-  backgroundColor = '';
+  currentBoard?: CheckBoard;
 
   constructor(private boardService: BoardService) {}
 
   ngOnInit(): void {
     this.boardService.currentBoard$.subscribe((board) => {
       setTimeout(() => {
-        this.background = board?.image || '';
-        this.backgroundColor = board?.color || '';
+        this.currentBoard = board;
       });
     });
+  }
+
+  get backgroundColor() {
+    return this.currentBoard ? this.currentBoard?.color : '';
+  }
+
+  get background() {
+    return this.currentBoard ? this.currentBoard?.image : '';
   }
 }

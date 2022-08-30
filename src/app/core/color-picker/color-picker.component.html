@@ -1,0 +1,15 @@
+<button (click)="toggleOpen()" class="button">
+  <i-con [style.color]="selected" name="smoothSquare"></i-con>
+  <span>{{ title }}</span>
+</button>
+
+<main *ngIf="open">
+  <div class="colors">
+    <div
+      *ngFor="let color of colors"
+      [style.color]="color"
+      (click)="select(color)"
+      class="color"
+    ></div>
+  </div>
+</main>
