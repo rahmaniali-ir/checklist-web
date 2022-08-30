@@ -13,6 +13,21 @@ export const emojiPack: Emoji[] = [
     tags: ['board'],
   },
   {
+    title: 'Bag',
+    icon: 'bag',
+    tags: ['bag', 'work', 'school', 'briefcase', 'document', 'office'],
+  },
+  {
+    title: 'Building',
+    icon: 'building',
+    tags: ['building', 'place', 'office', 'school', 'home', 'house', 'work'],
+  },
+  {
+    title: 'Home',
+    icon: 'home',
+    tags: ['home', 'house', 'family'],
+  },
+  {
     title: 'Cloud',
     icon: 'cloud',
     tags: ['cloud', 'sky'],
