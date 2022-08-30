@@ -1,3 +1,4 @@
+import { IconName } from 'src/app/core/i-con/icons';
 import { ArrayMap } from './array-map';
 
 export interface CheckItem {
@@ -26,18 +27,20 @@ export class CheckBoard {
   title: string;
   color: string;
   lists = new ArrayMap<CheckList>('uid');
-  icon?: string;
+  icon?: IconName;
   image?: string;
 
   constructor(
     uid: string,
     title: string = '',
     color: string = '',
-    image: string = ''
+    image: string = '',
+    icon: IconName = 'board'
   ) {
     this.uid = uid;
     this.title = title;
     this.color = color;
     this.image = image;
+    this.icon = icon;
   }
 }

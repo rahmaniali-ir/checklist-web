@@ -35,7 +35,7 @@
     [class.no-name]="!board.title"
     class="button"
   >
-    <i-con name="board"></i-con>
+    <i-con [name]="board.icon"></i-con>
     <span>{{ board.title || "Unnamed Board" }}</span>
     <span *ngIf="board.lists.length" class="badge">{{
       board.lists.length

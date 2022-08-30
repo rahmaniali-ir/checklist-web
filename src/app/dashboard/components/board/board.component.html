@@ -1,9 +1,9 @@
 <header>
   <div class="options">
-    <button class="button">
-      <i-con name="smile"></i-con>
-      <span>Change Icon</span>
-    </button>
+    <icon-picker
+      [(selected)]="board.icon"
+      [title]="'Change Icon'"
+    ></icon-picker>
 
     <button class="button">
       <i-con name="paint"></i-con>

@@ -1,0 +1,27 @@
+<button (click)="toggleOpen()" class="button">
+  <i-con [name]="selected || 'smile'"></i-con>
+  <span>{{ title }}</span>
+</button>
+
+<main *ngIf="open">
+  <header>
+    <input
+      [(ngModel)]="searchKey"
+      autofocus
+      placeholder="Search"
+      type="text"
+      class="plain-text-input"
+    />
+  </header>
+
+  <div class="icons">
+    <div
+      *ngFor="let emoji of emojis"
+      [title]="emoji.title"
+      (click)="select(emoji)"
+      class="icon"
+    >
+      <i-con [name]="emoji.icon"></i-con>
+    </div>
+  </div>
+</main>
