@@ -43,6 +43,11 @@ export const emojiPack: Emoji[] = [
     tags: ['smile', 'emoji', 'happy'],
   },
   {
+    title: 'Heart',
+    icon: 'heart',
+    tags: ['heart', 'love'],
+  },
+  {
     title: 'Paint',
     icon: 'paint',
     tags: ['paint', 'drawing', 'brush'],
