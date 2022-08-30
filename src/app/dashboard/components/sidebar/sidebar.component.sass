@@ -8,24 +8,31 @@ $outletPadding: 16px
   box-shadow: var(--shadow)
   display: flex
   flex-direction: column
+  height: calc(100vh - (var(--dashboard-padding) * 2))
   margin-inline-end: var(--dashboard-padding)
   max-width: 250px
-  padding: 16px
+  overflow: auto
+  padding: 0 16px
   position: relative
   width: 20vw
   z-index: 2
 
   > header
+    position: sticky
+    top: 0
+    z-index: 2
+
     .logo
       align-items: center
+      background: var(--gray-900)
       border-bottom: 1px solid var(--gray-800)
       color: #b1b3d1
       display: flex
       font-size: 24px
       font-weight: bold
-      height: calc(var(--dashboard-cover) - var(--dashboard-padding) - 16px)
+      height: calc(var(--dashboard-cover) - var(--dashboard-padding))
       justify-content: center
-      padding-bottom: 16px
+      padding: 16px 0
       text-align: center
       transition: all .3s ease
       
@@ -107,7 +114,13 @@ $outletPadding: 16px
           color: var(--gray-500)
 
   > footer
+    background: var(--gray-900)
+    border-top: 1px solid var(--gray-800)
+    bottom: 0
     margin-top: auto
+    padding: 16px 0
+    position: sticky
+    z-index: 2
 
 .button
   display: flex
