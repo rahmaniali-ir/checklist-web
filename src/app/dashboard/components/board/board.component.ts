@@ -52,6 +52,10 @@ export class BoardComponent implements OnInit {
     });
   }
 
+  deleteBoard() {
+    this.boardService.deleteBoard(this.board.uid).subscribe();
+  }
+
   newList() {
     this.board?.lists.add(new CheckList('12', '', this.board));
   }

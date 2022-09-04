@@ -65,4 +65,21 @@ export class BoardService {
       });
     });
   }
+
+  deleteBoard(uid: string) {
+    return new Observable((o) => {
+      this.api.delete('board/' + uid).subscribe({
+        next: () => {
+          this.boards.remove(uid);
+
+          o.next();
+          o.complete();
+        },
+        error: (err) => {
+          o.error(err);
+          o.complete();
+        },
+      });
+    });
+  }
 }
