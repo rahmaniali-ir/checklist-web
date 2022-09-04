@@ -46,6 +46,10 @@ export class ArrayMap<T = any> {
     return this.map[index];
   }
 
+  getIndex(index: string) {
+    return this.array.findIndex((item) => (item as any)[this._index] === index);
+  }
+
   add(...items: T[]) {
     const newMap = { ...this.map };
 

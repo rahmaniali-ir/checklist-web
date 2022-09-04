@@ -53,7 +53,18 @@ export class BoardComponent implements OnInit {
   }
 
   deleteBoard() {
-    this.boardService.deleteBoard(this.board.uid).subscribe();
+    const index = this.boardService.boards.getIndex(this.board.uid);
+
+    this.boardService.deleteBoard(this.board.uid).subscribe(() => {
+      if (!this.boardService.boards.length) {
+        this.router.navigate(['/']);
+        return;
+      }
+
+      const previousIndex = Math.max(0, index - 1);
+      const neighborBoard = this.boardService.boards.array[previousIndex];
+      this.router.navigate(['/board/' + neighborBoard.uid]);
+    });
   }
 
   newList() {
