@@ -2,10 +2,14 @@
   <div *ngIf="board" class="options">
     <icon-picker
       [(selected)]="board.icon"
+      (selectedChange)="boardUpdated()"
       [title]="'Change Icon'"
     ></icon-picker>
 
-    <color-picker [(selected)]="board.color"></color-picker>
+    <color-picker
+      [(selected)]="board.color"
+      (selectedChange)="boardUpdated()"
+    ></color-picker>
 
     <button class="button">
       <i-con name="image"></i-con>
@@ -25,6 +29,7 @@
     <input
       *ngIf="board"
       [(ngModel)]="board.title"
+      (ngModelChange)="boardUpdated()"
       placeholder="Unnamed Board"
       class="plain-text-input"
       type="text"

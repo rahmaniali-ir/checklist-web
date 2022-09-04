@@ -82,4 +82,19 @@ export class BoardService {
       });
     });
   }
+
+  updateBoard(board: CheckBoard) {
+    return new Observable((o) => {
+      this.api.put('board', board.JSON).subscribe({
+        next: () => {
+          o.next();
+          o.complete();
+        },
+        error: (err) => {
+          o.error(err);
+          o.complete();
+        },
+      });
+    });
+  }
 }

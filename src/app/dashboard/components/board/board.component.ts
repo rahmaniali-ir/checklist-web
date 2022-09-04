@@ -5,6 +5,7 @@ import {
   NavigationStart,
   Router,
 } from '@angular/router';
+import { debounceTime, Subject } from 'rxjs';
 import { BoardService } from '../../services/board.service';
 import { CheckBoard, CheckList } from '../../types/board';
 
@@ -15,6 +16,7 @@ import { CheckBoard, CheckList } from '../../types/board';
 })
 export class BoardComponent implements OnInit {
   board!: CheckBoard;
+  boardChange$ = new Subject();
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +26,10 @@ export class BoardComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadBoard();
+
+    this.boardChange$.pipe(debounceTime(2000)).subscribe(() => {
+      this.updateBoard();
+    });
   }
 
   get image() {
@@ -52,6 +58,10 @@ export class BoardComponent implements OnInit {
     });
   }
 
+  private updateBoard() {
+    this.boardService.updateBoard(this.board).subscribe();
+  }
+
   deleteBoard() {
     const index = this.boardService.boards.getIndex(this.board.uid);
 
@@ -65,6 +75,10 @@ export class BoardComponent implements OnInit {
       const neighborBoard = this.boardService.boards.array[previousIndex];
       this.router.navigate(['/board/' + neighborBoard.uid]);
     });
+  }
+
+  boardUpdated() {
+    this.boardChange$.next(undefined);
   }
 
   newList() {
