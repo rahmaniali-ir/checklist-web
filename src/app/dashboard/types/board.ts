@@ -43,4 +43,14 @@ export class CheckBoard {
     this.image = image;
     this.icon = icon;
   }
+
+  get JSON() {
+    return {
+      uid: this.uid,
+      title: this.title,
+      color: this.color,
+      icon: this.icon,
+      image: this.image,
+    };
+  }
 }

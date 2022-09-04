@@ -51,14 +51,18 @@ export class BoardService {
 
   newBoard() {
     return new Observable<CheckBoard>((subscriber) => {
-      const count = this.boards.length + 1;
-      const color = randomHexColor();
+      const board = new CheckBoard('', '', randomHexColor(), '', 'board');
 
-      const newBoard = new CheckBoard(String(count), '', color);
-      this.boards.add(newBoard);
+      this.api.post<CheckBoard>('board', board.JSON).subscribe({
+        next: (newBoard) => {
+          board.uid = newBoard.uid;
+          this.boards.add(board);
 
-      subscriber.next(newBoard);
-      subscriber.complete();
+          subscriber.next(board);
+          subscriber.complete();
+        },
+        error: (err) => {},
+      });
     });
   }
 }
