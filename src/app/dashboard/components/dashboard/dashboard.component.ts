@@ -13,6 +13,8 @@ export class DashboardComponent implements OnInit {
   constructor(private boardService: BoardService) {}
 
   ngOnInit(): void {
+    this.boardService.fetchBoards().subscribe();
+
     this.boardService.currentBoard$.subscribe((board) => {
       setTimeout(() => {
         this.currentBoard = board;
