@@ -53,4 +53,14 @@ export class CheckBoard {
       image: this.image,
     };
   }
+
+  static fromJSON(board: { [key in string]: string }) {
+    const uid = board['uid'] || '';
+    const title = board['title'] || '';
+    const color = board['color'] || '';
+    const image = board['image'] || undefined;
+    const icon = (board['icon'] as IconName) || undefined;
+
+    return new CheckBoard(uid, title, color, image, icon);
+  }
 }
